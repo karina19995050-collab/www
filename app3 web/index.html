@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>Бросить курить - Трекер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚭 Бросить курить</h1>
+            <p class="subtitle">Отслеживайте свой прогресс</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="calendar">Календарь</button>
+            <button class="tab-button" data-tab="stats">Статистика</button>
+        </div>
+
+        <!-- Вкладка Календарь -->
+        <div id="calendar-tab" class="tab-content active">
+            <div class="calendar-header">
+                <button class="nav-button" id="prev-month">‹</button>
+                <h2 id="current-month-year"></h2>
+                <button class="nav-button" id="next-month">›</button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="legend-box checked"></span>
+                    <span>Не курил</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-box unchecked"></span>
+                    <span>Курил</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вкладка Статистика -->
+        <div id="stats-tab" class="tab-content">
+            <div class="stats-container">
+                <div class="stat-card main-stat">
+                    <div class="stat-value" id="days-count">0</div>
+                    <div class="stat-label">Дней без курения</div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="hours-count">0</div>
+                        <div class="stat-label">Часов</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="minutes-count">0</div>
+                        <div class="stat-label">Минут</div>
+                    </div>
+                </div>
+
+                <div class="stat-card achievement">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-text" id="achievement-text">Начните свой путь!</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-label">Сэкономлено денег</div>
+                    <div class="stat-value" id="money-saved">0 ₽</div>
+                    <input type="number" id="cigarette-price" placeholder="Цена пачки" min="0" step="10">
+                    <input type="number" id="cigarettes-per-day" placeholder="Пачек в день" min="0" step="0.1">
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-label">Сэкономлено сигарет</div>
+                    <div class="stat-value" id="cigarettes-saved">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
